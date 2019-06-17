@@ -31,4 +31,12 @@ class UsersModuleTest extends TestCase
             ->assertStatus(200)
             ->assertSee('Crear un nuevo usuario');
     }
+
+    /** @test */
+    function it_loads_the_edit_user_page()
+    {
+        $this->get('/usuarios/5/edit')
+            ->assertStatus(200)
+            ->assertSee('Editar el usuario con id: 5');
+    }
 }
