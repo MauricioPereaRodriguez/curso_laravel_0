@@ -21,4 +21,10 @@ Route::get('/usuarios/{id}', 'UserController@show')->where('id', '[0-9]+'); // t
 
 Route::get('usuarios/nuevo', 'UserController@create');
 
+Route::get('usuarios/{id}/editar', 'UserController@edit');
+
 Route::get('saludo/{name}/{nickname?}', 'WelcomeUserController');
+
+Route::get('saludo-ejercicio/{name}', 'WelcomeUserEjercicioController@saludarConNombre');
+
+Route::get('saludo-ejercicio/{name}/{nickname}', 'WelcomeUserEjercicioController@saludarConNickname');
