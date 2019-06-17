@@ -28,9 +28,11 @@ Route::get('usuarios/nuevo', function(){
 });
 
 Route::get('saludo/{name}/{nickname?}', function($name, $nickname = null){
+
+    $name = ucfirst($name);
     
     if($nickname)
         return "Bienvenido {$name}, tu apodo es {$nickname}";
     
-    return "Bienvenido {$name}, No tienes apodo";
+    return "Bienvenido {$name}";
 });
