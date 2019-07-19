@@ -8,11 +8,15 @@
 </head>
 <body>
     <h1>{{$title}}</h1>
+    <hr>
 
     <ul>
-        @foreach ($users as $user)
+        @forelse ($users as $user)
             <li>{{ $user }}</li>
-        @endforeach
-    </ul>
+        @empty
+        <p>No hay usuarios registrados.</p>
+
+        @endforelse
+    </ul>   
 </body>
 </html>
